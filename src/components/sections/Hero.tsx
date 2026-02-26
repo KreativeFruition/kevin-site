@@ -30,6 +30,7 @@ export const Hero = () => {
         <div className="absolute -inset-x-12 top-0 h-1/5 md:inset-x-0 bg-gradient-to-b from-black/70 via-black/35 to-transparent" />
         <div className="absolute -inset-x-12 -inset-y-8 md:inset-0 bg-gradient-to-t from-transparent via-black/60 to-black/90" />
         <div className="absolute -inset-x-12 bottom-0 h-4/5 md:inset-x-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-black md:hidden" />
       </div>
       <div className="relative z-10 px-6 sm:px-10 lg:px-16">
         <motion.div
