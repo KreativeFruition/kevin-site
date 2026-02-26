@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Intro Call • 1:1 Dance Consult</title>
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/web-app-manifest-192x192.png"/>
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/web-app-manifest-512x512.png"/>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg"/>
+  <link rel="shortcut icon" href="assets/icons/favicon.ico"/>
+  <link rel="manifest" href="assets/icons/site.webmanifest"/>
+  <meta name="msapplication-TileColor" content="#0f172a"/>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFCCB8V3XB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GFCCB8V3XB'); // GA4 measurement ID
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --brand-stops:#00CFFF,#2F80FF,#8A2BE2,#FF00FF,#FF375F,#FF7A00,#FFE500,#00CFFF;
+      --brand-gradient:linear-gradient(90deg,var(--brand-stops));
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      overflow:hidden;
+      background:#f9fafc;
+      position:relative;
+    }
+    .page-top-gradient{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      pointer-events:none;
+      z-index:30;
+    }
+    .page-top-gradient-bar{
+      width:100%;
+      height:4px;
+      border-radius:999px;
+      background:var(--brand-gradient);
+      background-size:320% 320%;
+      animation:gradientShift 12s ease infinite;
+      box-shadow:0 0 18px rgba(15,23,42,0.12);
+    }
+    .page-top-gradient-glow{
+      position:absolute;
+      top:-140px;
+      left:-20%;
+      right:-20%;
+      height:320px;
+      background:var(--brand-gradient);
+      background-size:320% 320%;
+      filter:blur(140px);
+      opacity:0.22;
+      border-radius:60%;
+      animation:gradientShift 12s ease infinite;
+    }
+    @media (max-width:768px){
+      .page-top-gradient-glow{
+        height:calc(100vh + 160px);
+        max-height:680px;
+        -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0) 100%);
+        mask-image:linear-gradient(to bottom, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0) 100%);
+      }
+    }
+    .ambient-background{
+      position:fixed;
+      inset:0;
+      background:white;
+      z-index:-2;
+    }
+    .ambient-gradient{
+      position:fixed;
+      top:-12%;
+      bottom:-22%;
+      left:-15%;
+      right:-15%;
+      background:
+        radial-gradient(circle at 15% 32%, rgba(0,207,255,0.32), transparent 58%),
+        radial-gradient(circle at 80% 26%, rgba(255,0,255,0.28), transparent 55%),
+        radial-gradient(circle at 50% 80%, rgba(255,122,0,0.24), transparent 62%),
+        radial-gradient(circle at 52% 58%, rgba(80,200,255,0.18), transparent 70%);
+      animation:float 16s ease-in-out infinite alternate;
+      opacity:0.4;
+      filter:blur(22px);
+      z-index:-1;
+      overflow:hidden;
+      pointer-events:none;
+    }
+
+    .ambient-gradient::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(249,250,252,0) 0%, rgba(249,250,252,0.88) 100%);
+      pointer-events:none;
+    }
+
+    .ambient-gradient::after{
+      content:'';
+      position:absolute;
+      inset:-30%;
+      background:var(--brand-gradient);
+      background-size:200% 200%;
+      mix-blend-mode:screen;
+      opacity:0.28;
+      animation:gradientFlow 22s linear infinite;
+      filter:blur(40px);
+    }
+
+    .frame{
+      height:100vh;
+      width:100vw;
+      display:grid;
+      place-items:center;
+      padding:clamp(20px,5vw,36px);
+    }
+
+    .widget-shell{
+      width:min(520px,90vw);
+      align-self:start;
+      margin-top:clamp(140px,18vh,220px);
+    }
+
+    @media (max-width:640px){
+      .widget-shell{
+        margin-top:clamp(180px,32vh,280px);
+      }
+      .ambient-gradient{
+        top:10%;
+        bottom:-38%;
+        opacity:0.32;
+        filter:blur(28px);
+      }
+      .ambient-gradient::before{
+        background:linear-gradient(to top, rgba(249,250,252,0) 0%, rgba(249,250,252,0.95) 100%);
+      }
+    }
+
+    .widget-shell elevenlabs-convai{
+      display:block;
+      min-height:120px;
+    }
+
+    footer{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:20px;
+      padding-bottom:0;
+      text-align:center;
+      font-size:9px;
+      color:#94a3b8;
+    }
+
+    @keyframes gradientShift{
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+    @keyframes float{
+      0%{transform:translate3d(0,0,0) scale(1);}
+      100%{transform:translate3d(6%,4%,0) scale(1.05);}
+    }
+
+    @keyframes gradientFlow{
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ["Inter","ui-sans-serif","system-ui","-apple-system","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif"],
+              },
+              backgroundImage: {
+                prism: "linear-gradient(90deg,#00cfff 0%,#3a6dff 22%,#ff00a8 46%,#ff4d2e 62%,#ffc400 80%,#9cff00 100%)",
+                prismMoving: "linear-gradient(90deg,#00cfff,#3a6dff,#ff00a8,#ff4d2e,#ffc400,#9cff00,#00cfff)",
+              },
+              keyframes: {
+                gradientShift: {
+                  '0%':   { backgroundPosition: '0% 50%' },
+                  '50%':  { backgroundPosition: '100% 50%' },
+                  '100%': { backgroundPosition: '0% 50%' },
+                },
+                float: {
+                  '0%,100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-6px)' }
+                },
+              },
+              animation: {
+                gradient: 'gradientShift 12s ease infinite',
+                float: 'float 16s ease-in-out infinite',
+              },
+            }
+          }
+        }
+      </script>
+
+</head>
+
+<body class="bg-white text-ink font-sans antialiased relative overflow-x-hidden">
+  <div aria-hidden="true" class="page-top-gradient">
+    <div class="page-top-gradient-bar"></div>
+    <div class="page-top-gradient-glow"></div>
+  </div>
+  <div class="ambient-background" aria-hidden="true"></div>
+  <div class="ambient-gradient" aria-hidden="true"></div>
+<header class="relative max-w-5xl mx-auto px-6 sm:px-8 pt-16 pb-10 text-center flex flex-col items-center">
+  <div class="relative mx-auto w-20 h-20 mb-6 rounded-full p-[3px] bg-[length:400%_400%] animate-gradient" style="background-image:linear-gradient(90deg,#00cfff,#3a6dff,#ff00a8,#ff4d2e,#ffc400,#9cff00,#00cfff)">
+    <div class="rounded-full bg-white w-full h-full flex items-center justify-center overflow-hidden">
+      <img alt="1:1 Dance Consult logo" class="w-full h-full object-cover rounded-full" src="https://i.imgur.com/36ZkhMb.png"/>
+    </div>
+  </div>
+  <span class="inline-flex items-center gap-2 rounded-full bg-black text-white/90 px-5 py-2 text-xs uppercase tracking-[0.22em] font-semibold shadow-sm">AI Coach</span>
+  <div class="floating-orb" aria-hidden="true"></div>
+</header>
+  <main class="frame">
+    <div class="widget-shell" aria-live="polite">
+      <elevenlabs-convai agent-id="agent_4601k70yan92f44r2x1qep7ew950"></elevenlabs-convai>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+  <footer>© <span id="y"></span> 1:1 Dance Consult</footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

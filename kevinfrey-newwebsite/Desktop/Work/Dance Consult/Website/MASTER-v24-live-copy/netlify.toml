@@ -1,0 +1,49 @@
+# Netlify deploy configuration
+[build]
+  command = "npm --prefix netlify/functions install && npm --prefix portal-app install && npm --prefix portal-app run build"
+  publish = "."
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/pixel/*"
+  to = "/.netlify/functions/pixel"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/pixel/*"
+  [headers.values]
+    Cache-Control = "no-store"
+    X-Content-Type-Options = "nosniff"
+
+# Optional: cache icons aggressively
+[[headers]]
+  for = "/assets/icons/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "image/svg+xml; charset=utf-8"
+
+[[headers]]
+  for = "/assets/icons/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "image/png"
+
+[[headers]]
+  for = "/assets/icons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Optional: click logger route
+[[redirects]]
+  from = "/r"
+  to = "/.netlify/functions/r"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/portal/*"
+  to = "/portal/index.html"
+  status = 200

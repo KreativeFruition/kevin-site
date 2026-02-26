@@ -1,0 +1,10 @@
+# Portal SPA build artifacts
+portal/
+
+# Node artifacts
+portal-app/node_modules/
+portal-app/dist/
+portal-app/.npm-cache/
+
+# OS cruft
+.DS_Store

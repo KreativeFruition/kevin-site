@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Subscribe — 1:1 Dance Consult</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/web-app-manifest-192x192.png"/>
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/web-app-manifest-512x512.png"/>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg"/>
+  <link rel="shortcut icon" href="assets/icons/favicon.ico"/>
+  <link rel="manifest" href="assets/icons/site.webmanifest"/>
+  <meta name="msapplication-TileColor" content="#0f172a"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFCCB8V3XB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GFCCB8V3XB'); // GA4 measurement ID
+  </script>
+  <style>
+    *,*::before,*::after{ box-sizing:border-box }
+    body{
+      margin:0;
+      -webkit-text-size-adjust:100%;
+      font-family:Helvetica, Arial, sans-serif;
+      background:#fff7fb;
+      min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      padding:20px;
+    }
+    .subscribe-card{
+      position:relative; isolation:isolate;
+      background:#fff; border-radius:16px; max-width:640px; width:100%;
+      padding:40px 28px; text-align:center;
+      box-shadow:0 8px 24px rgba(17,17,17,.08);
+    }
+    .page-top-gradient{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      pointer-events:none;
+      z-index:30;
+    }
+    .page-top-gradient-bar{
+      width:100%;
+      height:4px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#00CFFF,#3A6DFF,#FF00A8,#FF4D2E,#FFC400,#9CFF00,#00CFFF);
+      background-size:320% 320%;
+      animation:move 12s linear infinite;
+      box-shadow:0 0 18px rgba(15,23,42,0.12);
+    }
+    .page-top-gradient-glow{
+      position:absolute;
+      top:-140px;
+      left:-20%;
+      right:-20%;
+      height:320px;
+      background:linear-gradient(90deg,#00CFFF,#3A6DFF,#FF00A8,#FF4D2E,#FFC400,#9CFF00,#00CFFF);
+      background-size:320% 320%;
+      filter:blur(140px);
+      opacity:0.22;
+      border-radius:60%;
+      animation:move 12s linear infinite;
+    }
+    @media (max-width:768px){
+      .page-top-gradient-glow{
+        height:calc(100vh + 160px);
+        max-height:680px;
+        -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0) 100%);
+        mask-image:linear-gradient(to bottom, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0) 100%);
+      }
+    }
+    .subscribe-card::before{
+      content:""; position:absolute; inset:0; border-radius:inherit; padding:2px;
+      background:linear-gradient(90deg,#00CFFF,#3A6DFF,#FF00A8,#FF4D2E,#FFC400,#9CFF00);
+      background-size:300% 300%;
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor; mask-composite:exclude;
+      animation:move 8s linear infinite; z-index:-1;
+    }
+    @keyframes move{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .subscribe-title{margin:0 0 8px; font-size:26px; font-weight:700; color:#0F172A}
+    .subscribe-subtitle{margin:0 0 24px; font-size:15px; color:#6B7280}
+    .subscribe-form{ margin:0 auto 12px; max-width:480px }
+    .subscribe-inner{
+      display:grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      column-gap:12px; align-items:center;
+    }
+    @media (max-width:640px){
+      .subscribe-card{ padding:28px 20px }
+      .subscribe-inner{ grid-template-columns: 1fr; row-gap:12px }
+    }
+    .subscribe-input{
+      width:100%;
+      padding:12px 16px;
+      border:1px solid #E5E7EB;
+      border-radius:999px;
+      font-size:17px; line-height:1.4;
+      background:#fff;
+      -webkit-appearance:none; appearance:none;
+      outline:none; transition:border-color .18s ease;
+    }
+    .subscribe-input:focus{ border-color:#3A6DFF }
+    .subscribe-button{
+      padding:12px 20px;
+      font-size:16px; font-weight:700;
+      border-radius:999px; border:2px solid transparent;
+      background:
+        linear-gradient(#fff,#fff) padding-box,
+        linear-gradient(90deg,#00CFFF,#3A6DFF,#FF00A8,#FF4D2E,#FFC400,#9CFF00) border-box;
+      color:#0F172A; cursor:pointer;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+      transition:transform .08s ease, box-shadow .2s ease;
+    }
+    .subscribe-button:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(0,0,0,.08) }
+    @media (max-width:640px){ .subscribe-button{ width:100% } }
+    .subscribe-fine{ margin:10px 0 0; font-size:12px; color:#6B7280 }
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+  </style>
+</head>
+<body>
+  <div aria-hidden="true" class="page-top-gradient">
+    <div class="page-top-gradient-bar"></div>
+    <div class="page-top-gradient-glow"></div>
+  </div>
+
+  <section class="subscribe-card">
+    <h2 class="subscribe-title">Want to stay up to date?</h2>
+    <p class="subscribe-subtitle">
+      Occasional insights, tools, and updates for creative careers. No spam—ever.
+    </p>
+
+    <form action="https://formspree.io/f/mblkkpwa" method="POST" class="subscribe-form">
+      <div class="subscribe-inner">
+        <label for="email" class="sr-only">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required class="subscribe-input" />
+        <button type="submit" class="subscribe-button">Sign up</button>
+      </div>
+      <input type="hidden" name="_subject" value="New newsletter subscriber — 1:1 Dance Consult" />
+      <input type="hidden" name="_redirect" value="https://www.1on1consult.org/thanks.html" />
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+    </form>
+
+    <p class="subscribe-fine">Unsubscribe anytime. We’ll never share your email.</p>
+  </section>
+
+</body>
+</html>

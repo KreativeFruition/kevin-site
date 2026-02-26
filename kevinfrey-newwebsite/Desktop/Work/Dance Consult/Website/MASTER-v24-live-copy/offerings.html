@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html id="top" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Offerings • 1:1 Dance Consult</title>
+<meta content="From 1:1 mentorship to AI systems, discover every resource built to move your artistry forward." name="description"/>
+<meta content="Offerings • 1:1 Dance Consult" property="og:title"/>
+<meta content="From 1:1 mentorship to AI systems, discover every resource built to move your artistry forward." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.1on1consult.org/offerings" property="og:url"/>
+<meta content="#ffffff" name="theme-color"/>
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/web-app-manifest-192x192.png"/>
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/web-app-manifest-512x512.png"/>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg"/>
+  <link rel="shortcut icon" href="assets/icons/favicon.ico"/>
+  <link rel="manifest" href="assets/icons/site.webmanifest"/>
+  <meta name="msapplication-TileColor" content="#0f172a"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GFCCB8V3XB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GFCCB8V3XB'); // GA4 measurement ID
+</script>
+<!-- Tailwind CSS (CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter","ui-sans-serif","system-ui","-apple-system","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif"],
+          },
+          boxShadow: {
+            soft: "0 8px 30px rgba(0,0,0,0.05)",
+            softLg: "0 16px 40px rgba(0,0,0,0.08)",
+          },
+          colors: {
+            ink: "#0a0a0a",
+            mist: "#f6f7fb",
+          },
+          backgroundImage: {
+            prism: "linear-gradient(90deg,#00cfff 0%,#3a6dff 22%,#ff00a8 46%,#ff4d2e 62%,#ffc400 80%,#9cff00 100%)",
+            prismMoving: "linear-gradient(90deg,#00cfff,#3a6dff,#ff00a8,#ff4d2e,#ffc400,#9cff00,#00cfff)",
+          },
+          keyframes: {
+            gradientShift: {
+              '0%':   { backgroundPosition: '0% 50%' },
+              '50%':  { backgroundPosition: '100% 50%' },
+              '100%': { backgroundPosition: '0% 50%' },
+            },
+            float: {
+              '0%,100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-6px)' },
+            },
+          },
+          animation: {
+            gradient: 'gradientShift 12s ease infinite',
+            float: 'float 16s ease-in-out infinite',
+          },
+          borderRadius: { '3xl': '1.5rem' }
+        }
+      }
+    }
+  </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    .h1 { font-size: clamp(2.5rem, 3.2vw + 1rem, 4rem); line-height: 1.08; letter-spacing: -0.02em; }
+    .h2 { font-size: clamp(1.7rem, 1.6vw + 1rem, 2.4rem); line-height: 1.15; letter-spacing: -0.01em; }
+    .h3 { font-size: clamp(1.3rem, 1vw + 1rem, 1.7rem); line-height: 1.24; letter-spacing: -0.01em; }
+    .sub { font-size: clamp(1rem, 0.6vw + .9rem, 1.2rem); line-height: 1.6; color: #4b5563; }
+    .card-shell {
+      border-radius: 1.5rem;
+      padding: 1px;
+      background: linear-gradient(110deg,rgba(0,207,255,0.28),rgba(154,255,0,0.28),rgba(255,0,168,0.28));
+      transition: transform .28s ease, filter .28s ease;
+    }
+    .card-shell:hover { transform: translateY(-10px); filter: saturate(1.08); }
+    .card {
+      border-radius: calc(1.5rem - 1px);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(24px);
+      box-shadow: 0 12px 36px rgba(15,23,42,0.08);
+      padding: 2.5rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+    .pricing-card {
+      display: block;
+      gap: 0;
+    }
+    .btn { transition: transform .2s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .moving-bar { background-size: 400% 400%; }
+    .blob { filter: blur(36px); opacity:.15; }
+    .hero-gradient-glow {
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .hero-gradient-glow {
+        height: calc(100vh + 160px) !important;
+        max-height: 680px;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.85) 55%, rgba(0,0,0,0) 100%);
+      }
+    }
+    .gradient-text-animated { 
+      background: linear-gradient(90deg,#00cfff,#3a6dff,#ff00a8,#ff4d2e,#ffc400,#9cff00,#00cfff);
+      background-size: 400% 400%;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      animation: gradientShift 12s ease infinite;
+    }
+    .balance { text-wrap: balance; }
+    .sub-measure { max-width: 58ch; margin-left:auto; margin-right:auto; }
+    .hero-logo {
+      width: clamp(6rem, 10vw, 9rem);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      transition: transform .25s ease;
+    }
+    .hero-logo:hover {
+      transform: translateY(-4px);
+    }
+    .floating-orb {
+      position: absolute;
+      inset: auto 0 -14rem 0;
+      width: clamp(18rem, 42vw, 34rem);
+      height: clamp(18rem, 42vw, 34rem);
+      margin: 0 auto;
+      background: linear-gradient(120deg,#00cfff,#3a6dff,#ff00a8,#ff4d2e,#ffc400,#9cff00);
+      filter: blur(70px);
+      opacity: 0.18;
+      pointer-events: none;
+      border-radius: 50%;
+      animation: float 18s ease-in-out infinite;
+    }
+    .tool-icon {
+      width: 220px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .35s ease, filter .35s ease;
+      margin: 0 auto;
+    }
+    .tool-icon img {
+      width: 190px;
+      height: 190px;
+      display: block;
+      transition: transform .35s ease, filter .35s ease;
+    }
+    .card-shell:hover .tool-icon {
+      transform: translateY(-6px);
+    }
+    .webinar-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(1.5rem,3vw,2.6rem);
+      margin-top: clamp(2.5rem,4vw,3.2rem);
+      flex-wrap: wrap;
+    }
+    .webinar-logo {
+      width: clamp(9rem, 14vw, 11.5rem);
+      height: clamp(9rem, 14vw, 11.5rem);
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(90deg,#00cfff,#3a6dff,#ff00a8,#ff4d2e,#ffc400,#9cff00);
+      background-size: 320% 320%;
+      animation: gradientShift 12s ease infinite;
+      transition: transform .25s ease, filter .25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .webinar-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #fff;
+      padding: 10px;
+      transition: transform .25s ease, filter .25s ease;
+      box-shadow: 0 12px 26px rgba(15,23,42,0.16);
+    }
+    .webinar-logo:hover {
+      transform: translateY(-6px);
+      filter: saturate(1.05);
+    }
+    .webinar-logo:hover img {
+      transform: scale(1.05);
+      filter: drop-shadow(0 12px 24px rgba(15,23,42,0.18));
+    }
+    .card-shell:hover .tool-icon img {
+      transform: scale(1.05);
+      filter: drop-shadow(0 12px 24px rgba(15,23,42,0.12));
+    }
+    .play-icon {
+      animation: gradientShift 12s ease infinite;
+      transition: transform .3s ease;
+    }
+    .card-shell:hover .play-icon {
+      animation: gradientShift 12s ease infinite, nudge 0.6s ease;
+    }
+    @keyframes nudge {
+      0%,100% { transform: translateX(0); }
+      50% { transform: translateX(4px); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-gradient { animation: none !important; }
+      .gradient-text-animated { animation: none !important; }
+      .floating-orb { animation: none !important; }
+      .card, .btn { transition: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-white text-ink font-sans antialiased relative overflow-x-hidden">
+<!-- Top moving gradient bar -->
+<div class="w-full h-1 bg-prismMoving bg-[length:400%_400%] animate-gradient moving-bar"></div>
+<!-- Subtle animated gradient blob background -->
+<div aria-hidden="true" class="hero-gradient-glow pointer-events-none absolute inset-x-0 -top-24 h-72 bg-prismMoving bg-[length:400%_400%] animate-gradient blob"></div>
+<!-- Hero with logo -->
+<header class="relative max-w-5xl mx-auto px-6 sm:px-8 pt-16 pb-10 text-center">
+<!-- Logo -->
+<a href="index.html" aria-label="Back to home">
+<img class="hero-logo mb-7" alt="1:1 Dance Consult logo" src="https://i.imgur.com/36ZkhMb.png"/>
+</a>
+<span class="inline-flex items-center gap-2 rounded-full bg-black text-white/90 px-5 py-2 text-xs uppercase tracking-[0.22em] font-semibold shadow-sm">Offerings</span>
+<h1 class="h1 font-extrabold tracking-tight balance mt-6">
+      Where Guidance Meets <span class="gradient-text-animated">Innovation</span><span class="text-black">.</span>
+</h1>
+<p class="sub sub-measure mt-5">From 1:1 mentorship to AI systems, discover every resource built to move your artistry—and your career—forward.</p>
+<div class="floating-orb" aria-hidden="true"></div>
+</header>
+<!-- Pricing -->
+<section class="max-w-6xl mx-auto px-6 sm:px-8 py-6 sm:py-10" id="pricing">
+<h2 class="h2 font-semibold text-center balance">1:1</h2>
+<div class="mt-3 mx-auto h-1.5 w-20 rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient"></div>
+<div class="mt-12 grid md:grid-cols-3 gap-6">
+<!-- Single Session -->
+<article class="card-shell">
+<div class="card pricing-card">
+<div class="text-xs text-gray-500 uppercase tracking-widest">Starter</div>
+<h3 class="mt-1 text-xl font-semibold balance">Single Session</h3>
+<p class="mt-2 text-sm text-gray-600">Focused feedback, clarity + next steps.</p>
+<p class="mt-4 text-3xl font-semibold">$100</p>
+<!-- Gradient outline button -->
+<a class="w-full inline-block mt-6" href="https://calendly.com/d/cv4b-hrp-6zt" rel="noopener noreferrer" target="_blank">
+<span class="btn inline-flex w-full items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient">
+<span class="w-full rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center text-center">Book Now</span>
+</span>
+</a>
+</div>
+</article>
+<!-- 3‑Session Pack -->
+<article class="card-shell">
+<div class="card pricing-card">
+<div class="text-xs text-gray-500 uppercase tracking-widest">Most Popular</div>
+<h3 class="mt-1 text-xl font-semibold balance">3‑Session Pack</h3>
+<p class="mt-2 text-sm text-gray-600">Ongoing mentorship + accountability.</p>
+<p class="mt-4 text-3xl font-semibold">$275</p>
+<a class="w-full inline-block mt-6" href="https://buy.stripe.com/3cs6oIfVY68yek04gg" rel="noopener noreferrer" target="_blank">
+<span class="btn inline-flex w-full items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient">
+<span class="w-full rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center text-center">Book Now</span>
+</span>
+</a>
+</div>
+</article>
+<!-- 5‑Session Pack -->
+<article class="card-shell">
+<div class="card pricing-card">
+<div class="text-xs text-gray-500 uppercase tracking-widest">Best Value</div>
+<h3 class="mt-1 text-xl font-semibold balance">5‑Session Pack</h3>
+<p class="mt-2 text-sm text-gray-600">Momentum + deeper guidance.</p>
+<p class="mt-4 text-3xl font-semibold">$450</p>
+<a class="w-full inline-block mt-6" href="https://buy.stripe.com/28o6oIfVYeF4fo4289" rel="noopener noreferrer" target="_blank">
+<span class="btn inline-flex w-full items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient">
+<span class="w-full rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center text-center">Book Now</span>
+</span>
+</a>
+</div>
+</article>
+</div><div class="mt-6 text-center text-sm text-gray-700 text-center" data-global-includes="yes"><p class="font-semibold mb-2">Every Session Includes:</p><ul class="space-y-2 text-sm text-gray-700 inline-block text-left"><li class="flex items-start gap-2"><span class="mt-1 inline-block h-2 w-2 rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient"></span>Personalized 30‑min. 1:1 Session</li><li class="flex items-start gap-2"><span class="mt-1 inline-block h-2 w-2 rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient"></span>Session Recaps (Key Insights, Action Steps, Future Planning)</li><li class="flex items-start gap-2"><span class="mt-1 inline-block h-2 w-2 rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient"></span>Access to 1:1 AI Chatbot</li></ul></div>
+</section>
+<!-- Digital Resources -->
+<section class="max-w-6xl mx-auto px-6 sm:px-8 py-6 sm:py-10">
+<div class="text-center">
+<h2 class="h2 font-semibold balance">Tools</h2>
+<div class="mt-3 mx-auto h-1.5 w-20 rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient"></div>
+</div>
+
+<div class="mt-12 grid gap-6 md:grid-cols-3 items-stretch">
+<article class="card-shell">
+<div class="card flex flex-col gap-5 h-full">
+<div class="flex flex-col items-center text-center gap-3">
+<div class="tool-icon"><img src="assets/icons/lightbulb.svg" data-icon="lightbulb.svg" alt="Dream Gig Decoder icon" loading="lazy"/></div>
+<p class="text-xs font-semibold uppercase tracking-[0.24em] text-gray-500">Map Your Vision</p>
+<h3 class="h3 font-semibold text-gray-900 md:whitespace-nowrap">Dream Gig Decoder</h3>
+</div>
+<p class="text-sm text-gray-600 leading-7">Get clear on what your dream career actually looks like—creatively, logistically, and energetically—so every “yes” moves you closer to your bigger vision. This tool helps you define your ideal opportunities and turn them into a plan you can act on right now.</p>
+<ul class="list-disc pl-5 text-sm text-gray-600 space-y-2 text-left">
+<li>What creative, financial, and wellbeing factors truly matter to you</li>
+<li>The steps between where you are and where you want to go</li>
+<li>How to spot aligned opportunities and make confident choices</li>
+</ul>
+<div class="mt-auto flex flex-col gap-4">
+<p class="text-sm font-medium text-gray-500 italic">Turn big dreams into clear direction.</p>
+<a class="inline-flex group" href="dream-gig-decoder.html">
+<span class="inline-flex items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient btn transition-all duration-300">
+<span class="inline-flex items-center gap-3 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black group-hover:shadow-soft">
+<span class="play-icon inline-flex h-8 w-8 items-center justify-center rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient text-white text-xs">▶</span>
+<span class="tracking-wide transition-all duration-300 group-hover:translate-x-1 group-hover:text-gray-700">Start</span>
+</span>
+</span>
+</a>
+</div>
+</div>
+</article>
+
+<article class="card-shell">
+<div class="card flex flex-col gap-5 h-full">
+<div class="flex flex-col items-center text-center gap-3">
+<div class="tool-icon"><img src="assets/icons/paperplane.svg" data-icon="paperplane.svg" alt="Pitch Perfect icon" loading="lazy"/></div>
+<p class="text-xs font-semibold uppercase tracking-[0.24em] text-gray-500">Craft Your Message</p>
+<h3 class="h3 font-semibold text-gray-900">Pitch Perfect</h3>
+</div>
+<p class="text-sm text-gray-600 leading-7">Learn how to confidently introduce yourself, connect authentically, and pitch your ideas with clarity. This tool helps you write bold, professional messages to agents, choreographers, or collaborators—while staying true to your unique voice.</p>
+<ul class="list-disc pl-5 text-sm text-gray-600 space-y-2 text-left">
+<li>How to position yourself with confidence and intention</li>
+<li>Messaging frameworks for emails, DMs, or outreach campaigns</li>
+<li>Follow-up strategies that build real connection and opportunity</li>
+</ul>
+<div class="mt-auto flex flex-col gap-4">
+<p class="text-sm font-medium text-gray-500 italic whitespace-nowrap">Speak with confidence. Pitch with clarity.</p>
+<a class="inline-flex group" href="pitch-perfect.html">
+<span class="inline-flex items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient btn transition-all duration-300">
+<span class="inline-flex items-center gap-3 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black group-hover:shadow-soft">
+<span class="play-icon inline-flex h-8 w-8 items-center justify-center rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient text-white text-xs">▶</span>
+<span class="tracking-wide transition-all duration-300 group-hover:translate-x-1 group-hover:text-gray-700">Start</span>
+</span>
+</span>
+</a>
+</div>
+</div>
+</article>
+
+<article class="card-shell">
+<div class="card flex flex-col gap-5 h-full">
+<div class="flex flex-col items-center text-center gap-3">
+<div class="tool-icon"><img src="assets/icons/loop.svg" data-icon="loop.svg" alt="Training Loop icon" loading="lazy"/></div>
+<p class="text-xs font-semibold uppercase tracking-[0.24em] text-gray-500">Build Your Momentum</p>
+<h3 class="h3 font-semibold text-gray-900">Training Loop</h3>
+</div>
+<p class="text-sm text-gray-600 leading-7">Create a training plan that keeps you consistent, focused, and creatively fulfilled. This tool helps you design a routine that balances growth, rest, and reflection—so your progress stays steady and your artistry sharp.</p>
+<ul class="list-disc pl-5 text-sm text-gray-600 space-y-2 text-left">
+<li>The focus areas that strengthen your performance and individuality</li>
+<li>How to structure your weekly training for sustainable results</li>
+<li>Mindset prompts that keep you grounded, motivated, and evolving</li>
+</ul>
+<div class="mt-auto flex flex-col gap-4">
+<p class="text-sm font-medium text-gray-500 italic">Consistency builds greatness.</p>
+<a class="inline-flex group" href="training-loop.html">
+<span class="inline-flex items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient btn transition-all duration-300">
+<span class="inline-flex items-center gap-3 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black group-hover:shadow-soft">
+<span class="play-icon inline-flex h-8 w-8 items-center justify-center rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient text-white text-xs">▶</span>
+<span class="tracking-wide transition-all duration-300 group-hover:translate-x-1 group-hover:text-gray-700">Start</span>
+</span>
+</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 sm:px-8 py-12">
+<h2 class="h2 font-semibold text-center balance">Webinars</h2>
+<div class="mt-3 mx-auto h-1.5 w-20 rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient"></div>
+<p class="sub mt-4 text-center max-w-2xl mx-auto">Dive into our webinar series covering industry entry, career growth, sustainability, and AI powered workflows.</p>
+  <div class="webinar-logos" aria-label="Featured webinars">
+  <span class="webinar-logo" role="img" aria-label="Breaking Into The Industry">
+    <img src="assets/icons/breaking.png" alt="Breaking Into The Industry logo" loading="lazy"/>
+  </span>
+  <span class="webinar-logo" role="img" aria-label="Booked & Busy">
+    <img src="assets/icons/booked.png" alt="Booked & Busy logo" loading="lazy"/>
+  </span>
+  <span class="webinar-logo" role="img" aria-label="Creator Codes">
+    <img src="assets/icons/creator.png" alt="Creator Codes logo" loading="lazy"/>
+  </span>
+  <span class="webinar-logo" role="img" aria-label="Studio 2 Set">
+    <img src="assets/icons/studio2set.png" alt="Studio 2 Set logo" loading="lazy"/>
+  </span>
+  <span class="webinar-logo" role="img" aria-label="AI For Creatives">
+    <img src="assets/icons/ai4creatives.png" alt="AI For Creatives logo" loading="lazy"/>
+  </span>
+  </div>
+<div class="mt-10 max-w-3xl mx-auto text-center">
+<p class="text-sm text-gray-600">Interested in exploring our webinar offerings?</p>
+<a class="inline-block mt-3" href="mailto:hello@1on1consult.org?subject=Webinar%20Inquiry%20—%201:1%20Dance%20Consult">
+<span class="btn inline-flex items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient">
+<span class="rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center text-center">Email Us About Webinars</span>
+</span>
+</a>
+</div>
+<div class="mt-10 grid md:grid-cols-2 gap-6">
+<article class="card-shell">
+<div class="card flex flex-col gap-5 h-full text-center">
+<h3 class="text-lg font-semibold balance">Single Webinar</h3>
+<p class="mt-1 text-sm text-gray-600">Access Any 1 Webinar Of Your Choice.</p>
+<p class="mt-3 text-2xl font-semibold">$20</p>
+<div class="mt-auto">
+<a class="inline-block w-full" href="https://buy.stripe.com/28o4gA39cbsS0ta7sv" target="_blank" rel="noopener noreferrer">
+<span class="btn inline-flex w-full items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient">
+<span class="w-full rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center text-center">Purchase Now</span>
+</span>
+</a>
+</div>
+</div>
+</article>
+<article class="card-shell">
+<div class="card flex flex-col gap-5 h-full text-center">
+<h3 class="text-lg font-semibold balance">All 5 Webinars</h3>
+<p class="mt-1 text-sm text-gray-600">Full Access + Bonus Tools</p>
+<p class="mt-3 text-2xl font-semibold">$75</p>
+<div class="mt-auto">
+<a class="inline-block w-full" href="https://buy.stripe.com/00g00k5hk0OecbS6os" target="_blank" rel="noopener noreferrer">
+<span class="btn inline-flex w-full items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient">
+<span class="w-full rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center text-center">Purchase Now</span>
+</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<!-- AI Tools -->
+<section class="max-w-6xl mx-auto px-6 sm:px-8 py-12">
+<div class="text-center mb-12">
+<h2 class="h2 font-semibold balance">AI Tools</h2>
+<div class="mt-3 mx-auto h-1.5 w-20 rounded-full bg-prismMoving bg-[length:400%_400%] animate-gradient"></div>
+<p class="sub mt-4 max-w-2xl mx-auto">Combine human mentorship with intelligent systems—built to streamline operations, support decision-making, and keep you creating.</p>
+</div>
+<div class="mt-12 grid gap-6 md:grid-cols-2">
+<article class="card-shell">
+<div class="card flex flex-col gap-5 h-full">
+<div class="tool-icon"><img src="assets/icons/ai-concierge.svg" data-icon="ai-concierge.svg" alt="AI Concierge icon" loading="lazy"/></div>
+<div class="text-center">
+<p class="text-xs font-semibold uppercase tracking-[0.24em] text-gray-500">AI Concierge</p>
+<h3 class="h3 font-semibold text-gray-900 mt-2">Always-On Partner</h3>
+</div>
+<p class="text-sm text-gray-600 leading-7">Keep your bookings, follow-ups, and communications seamless with a concierge that understands your 1:1 journey.</p>
+<ul class="list-disc pl-5 text-sm text-gray-600 space-y-2 text-left">
+<li>Answers questions and recommends the right consultant or session</li>
+<li>Helps you book, reschedule, and explore offerings instantly</li>
+<li>Personalizes your experience based on goals and interests</li>
+</ul>
+<div class="mt-auto flex flex-col gap-4">
+<a class="inline-flex" href="concierge.html">
+<span class="btn inline-flex items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient">
+<span class="rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center">Explore the Concierge</span>
+</span>
+</a>
+</div>
+</div>
+</article>
+
+<article class="card-shell">
+<div class="card flex flex-col gap-5 h-full">
+<div class="tool-icon"><img src="assets/icons/ai-coach.svg" data-icon="ai-coach.svg" alt="AI Coach icon" loading="lazy"/></div>
+<div class="text-center">
+<p class="text-xs font-semibold uppercase tracking-[0.24em] text-gray-500">AI Coach</p>
+<h3 class="h3 font-semibold text-gray-900 mt-2">Personalized Guidance</h3>
+</div>
+<p class="text-sm text-gray-600 leading-7">A creative mentor in your pocket—always ready with reflection prompts, planning support, and mindset resets that match your energy.</p>
+<ul class="list-disc pl-5 text-sm text-gray-600 space-y-2 text-left">
+<li>Offers mindset prompts and reflection questions tailored to you</li>
+<li>Helps you structure goals, training cycles, and creative projects</li>
+<li>Keeps your momentum steady between real sessions</li>
+</ul>
+<div class="mt-auto flex flex-col gap-4">
+<span class="inline-flex opacity-70 cursor-not-allowed" role="button" aria-disabled="true">
+<span class="btn inline-flex items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient pointer-events-none">
+<span class="rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center">Only Available To 1:1 Clients</span>
+</span>
+</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<section class="max-w-5xl mx-auto px-6 sm:px-8 pb-16">
+<article class="card-shell">
+<div class="card p-10 text-left">
+<h2 class="h3 font-semibold text-gray-900">Custom Programs &amp; Systems</h2>
+<p class="mt-4 text-gray-600 leading-7">Whether you’re leading a studio, managing a creative team, or building the next phase of your business, we’ll co-design a tailored 1:1 experience that fits your goals. From on-site workshops to AI-assisted workflows, each partnership is built to enhance how you work, create, and grow.</p>
+<ul class="mt-6 space-y-3 text-sm text-gray-600 leading-7">
+<li><strong>Studios &amp; Teams:</strong> intensives, mentorship programs, and faculty development.</li>
+<li><strong>Creative Pros &amp; Businesses:</strong> customized toolkits, webinars, and strategic support.</li>
+<li><strong>AI Systems:</strong> concierge chatbots, automation flows, and creative ops solutions.</li>
+</ul>
+<div class="mt-8">
+<a class="inline-flex" href="mailto:hello@1on1consult.org?subject=Custom%20Offering%20Inquiry%20—%201:1%20Dance%20Consult">
+<span class="btn inline-flex items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient">
+<span class="rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center">Partner With Us</span>
+</span>
+</a>
+</div>
+</div>
+</article>
+</section>
+
+<!-- Newsletter CTA -->
+<section class="py-20 px-4" id="newsletter">
+<div class="container mx-auto max-w-3xl">
+<article class="card-shell">
+<div class="card rounded-2xl bg-white/80 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-6 py-8 md:px-10 md:py-12 text-center">
+<h3 class="text-2xl md:text-3xl font-semibold mb-3">Want To Stay Up To Date?</h3>
+<p class="text-gray-600 mb-8 max-w-2xl mx-auto">Occasional insights, tools, and updates for creative careers. No spam—ever.</p>
+<form action="https://formspree.io/f/mblkkpwa" aria-label="Newsletter sign-up" class="mx-auto flex flex-col sm:flex-row items-stretch gap-3 max-w-xl" method="POST">
+<input autocomplete="off" class="hidden" name="website" tabindex="-1" type="text"/>
+<input name="_next" type="hidden" value="/?subscribed=1#newsletter"/>
+<label class="sr-only" for="nl-email">Email address</label>
+<input autocomplete="email" class="flex-1 rounded-full border border-gray-300 bg-white/80 backdrop-blur px-5 py-3 focus:outline-none focus:ring focus:ring-electricBlue/30 text-gray-800" id="nl-email" inputmode="email" name="email" placeholder="you@example.com" required="" type="email"/>
+<button class="inline-flex items-center justify-center" type="submit">
+<span class="btn inline-flex items-center justify-center rounded-full p-[2px] bg-prismMoving bg-[length:400%_400%] animate-gradient">
+<span class="rounded-full bg-white px-5 py-2 text-sm font-medium text-black flex items-center justify-center text-center">Sign Up</span>
+</span>
+</button>
+</form>
+<p class="mt-4 text-xs text-gray-500">Unsubscribe anytime. We'll never share your email.</p>
+</div>
+</article>
+</div>
+</section>
+<!-- Minimal footer -->
+<footer class="border-t border-gray-100 py-10 text-center text-sm text-gray-500">
+<p>© <span id="y"></span> 1:1 Dance Consult • <a class="underline hover:text-gray-900" href="https://www.1on1consult.org">Visit Main Site</a></p>
+</footer>
+<script>
+  (function () {
+    var path = window.location.pathname || '/';
+    if (path !== '/' && path.endsWith('/')) {
+      path = path.slice(0, -1);
+    }
+    if (!path) path = '/';
+    var dir;
+    if (path === '/' || !path.includes('/')) {
+      dir = '/';
+    } else {
+      var lastSlash = path.lastIndexOf('/');
+      dir = lastSlash >= 0 ? path.slice(0, lastSlash + 1) : '/';
+      if (!dir) dir = '/';
+    }
+    if (!dir.endsWith('/')) {
+      dir += '/';
+    }
+    var prefix = dir === '/' ? 'assets/icons/' : dir + 'assets/icons/';
+    document.querySelectorAll('img[data-icon]').forEach(function (img) {
+      var file = img.getAttribute('data-icon');
+      if (!file) return;
+      img.src = prefix + file;
+    });
+  })();
+</script>
+<script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+<script src="assets/js/portal-gate.js"></script>
+</body>
+</html>
