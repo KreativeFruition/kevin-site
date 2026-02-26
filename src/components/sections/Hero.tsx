@@ -20,16 +20,16 @@ export const Hero = () => {
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <iframe
           title="Kevin Frey Hero Reel"
-          className="pointer-events-none absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2"
+          className="pointer-events-none absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 md:scale-100 scale-[1.15]"
           style={{ aspectRatio: "16 / 9" }}
           src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=1&loop=1&mute=1&controls=0&playlist=${HERO_VIDEO_ID}&playsinline=1&modestbranding=1&rel=0`}
           allow="autoplay; encrypted-media; picture-in-picture"
           allowFullScreen={false}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-1/5 bg-gradient-to-b from-black/70 via-black/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/60 to-black/90" />
-        <div className="absolute inset-x-0 bottom-0 h-4/5 bg-gradient-to-t from-black via-black/70 to-transparent" />
+        <div className="absolute -inset-x-12 -inset-y-8 md:inset-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent" />
+        <div className="absolute -inset-x-12 top-0 h-1/5 md:inset-x-0 bg-gradient-to-b from-black/70 via-black/35 to-transparent" />
+        <div className="absolute -inset-x-12 -inset-y-8 md:inset-0 bg-gradient-to-t from-transparent via-black/60 to-black/90" />
+        <div className="absolute -inset-x-12 bottom-0 h-4/5 md:inset-x-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
       </div>
       <div className="relative z-10 px-6 sm:px-10 lg:px-16">
         <motion.div
