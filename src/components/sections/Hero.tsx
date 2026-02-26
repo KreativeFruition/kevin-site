@@ -32,7 +32,7 @@ export const Hero = () => {
         <div className="absolute -inset-x-12 bottom-0 h-4/5 md:inset-x-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-black md:hidden" />
       </div>
-      <div className="relative z-10 px-6 sm:px-10 lg:px-16">
+      <div className="relative z-10 px-6 sm:px-10 lg:px-16 pb-8">
         <motion.div
           className="space-y-6 text-white"
           initial={textMotion.initial}
