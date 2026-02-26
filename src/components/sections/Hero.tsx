@@ -15,7 +15,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-dvh flex-col justify-end gap-10 overflow-hidden bg-black px-6 pb-16 pt-32 sm:px-10 lg:px-16"
+      className="relative flex min-h-dvh flex-col justify-end gap-10 overflow-hidden bg-black pb-16 pt-32"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="h-full w-full">
@@ -32,38 +32,40 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/60 to-black/90" />
         <div className="absolute inset-x-0 bottom-0 h-4/5 bg-gradient-to-t from-black via-black/70 to-transparent" />
       </div>
-      <motion.div
-        className="relative z-10 space-y-6 text-white"
-        initial={textMotion.initial}
-        animate={textMotion.animate}
-        transition={textMotion.transition}
-      >
-        <p className="text-xs uppercase tracking-[0.4em] text-neutral-400">
-          Kevin Frey
-        </p>
-        <h1 className="font-display text-[21vw] leading-[0.9] tracking-tight text-white sm:text-[14vw] lg:text-[11vw]">
-          KEVIN FREY
-        </h1>
-        <p className="font-display text-[2.2rem] leading-tight tracking-[0.15em] text-white sm:text-[3.2rem] uppercase">
-          Director. Creative. Producer. Educator. Choreographer. Dancer.
-        </p>
-        <p className="text-sm uppercase tracking-[0.45em] text-neutral-400">
-          Where vision meets creativity.
-        </p>
-      </motion.div>
+      <div className="relative z-10 px-6 sm:px-10 lg:px-16">
+        <motion.div
+          className="space-y-6 text-white"
+          initial={textMotion.initial}
+          animate={textMotion.animate}
+          transition={textMotion.transition}
+        >
+          <p className="text-xs uppercase tracking-[0.4em] text-neutral-400">
+            Kevin Frey
+          </p>
+          <h1 className="font-display text-[21vw] leading-[0.9] tracking-tight text-white sm:text-[14vw] lg:text-[11vw]">
+            KEVIN FREY
+          </h1>
+          <p className="font-display text-[2.2rem] leading-tight tracking-[0.15em] text-white sm:text-[3.2rem] uppercase">
+            Director. Creative. Producer. Educator. Choreographer. Dancer.
+          </p>
+          <p className="text-sm uppercase tracking-[0.45em] text-neutral-400">
+            Where vision meets creativity.
+          </p>
+        </motion.div>
 
-      <motion.div
-        className="relative z-10 flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.4em] text-neutral-500"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.9, duration: 0.6 }}
-      >
-        <span className="h-px w-20 bg-neutral-700" />
-        Scroll
-        <span className="relative flex h-7 w-4 items-center justify-center rounded-full border border-neutral-700">
-          <span className="h-1.5 w-1 rounded-full bg-neutral-300 animate-bounce" />
-        </span>
-      </motion.div>
+        <motion.div
+          className="mt-10 flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.4em] text-neutral-500"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+        >
+          <span className="h-px w-20 bg-neutral-700" />
+          Scroll
+          <span className="relative flex h-7 w-4 items-center justify-center rounded-full border border-neutral-700">
+            <span className="h-1.5 w-1 rounded-full bg-neutral-300 animate-bounce" />
+          </span>
+        </motion.div>
+      </div>
     </section>
   );
 };
