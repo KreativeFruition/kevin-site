@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { cinematicEase } from "@/lib/motion";
-import { cdnUrl } from "@/lib/cdn";
 
 const textMotion = {
   initial: { opacity: 0, y: 32 },
@@ -11,45 +9,24 @@ const textMotion = {
   transition: { duration: 0.9, ease: cinematicEase },
 };
 
+const HERO_VIDEO_ID = process.env.NEXT_PUBLIC_HERO_VIDEO_ID ?? "sgQ2zorivsM";
+
 export const Hero = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      const attemptPlay = () => {
-        video.currentTime = 0;
-        video.muted = true;
-        video.play().catch(() => {
-          /* Ignore autoplay rejections – keep background static */
-        });
-      };
-      video.addEventListener("canplaythrough", attemptPlay, { once: true });
-      attemptPlay();
-      return () => {
-        video.removeEventListener("canplaythrough", attemptPlay);
-      };
-    }
-  }, []);
-
   return (
     <section
       id="hero"
       className="relative flex min-h-dvh flex-col justify-end gap-10 overflow-hidden bg-black px-6 pb-16 pt-32 sm:px-10 lg:px-16"
     >
       <div className="pointer-events-none absolute inset-0">
-        <video
-          ref={videoRef}
-          className="pointer-events-none h-full w-full object-cover opacity-90 brightness-125"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        >
-          <source src={cdnUrl("hero-reel.mp4")} type="video/mp4" />
-        </video>
+        <div className="h-full w-full">
+          <iframe
+            title="Kevin Frey Hero Reel"
+            className="pointer-events-none h-full w-full scale-[1.01] transform"
+            src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=1&loop=1&mute=1&controls=0&playlist=${HERO_VIDEO_ID}&playsinline=1&modestbranding=1&rel=0`}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen={false}
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/5 bg-gradient-to-b from-black/70 via-black/35 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/60 to-black/90" />
