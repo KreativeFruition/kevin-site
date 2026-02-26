@@ -3,30 +3,31 @@
 import credits from "@/data/credits.json";
 import { motion } from "framer-motion";
 import { cinematicEase } from "@/lib/motion";
+import { cdnUrl } from "@/lib/cdn";
 
 type Credit = (typeof credits)[number];
 const creditHighlightVideos: Record<string, string> = {
-  "Super Bowl Halftime Show": "/branding/gaga-reel.mp4",
-  "Ariana Grande": "/branding/ariana-reel.mp4",
-  "Lady Gaga": "/branding/gaga-reel-2.mp4",
-  "Taylor Swift": "/branding/taylor-reel.mp4",
-  "J Balvin x Fortnite": "/branding/jbalvin-reel.mp4",
-  "Valley Girl": "/branding/valleygirl-reel.mp4",
-  "Artistic Dance Exchange": "/branding/ade-reel.mp4",
-  "The PULSE": "/branding/pulse-reel.mp4",
-  "Fama A Bailar": "/branding/fama-reel.mp4",
-  "\"Insipid\"": "/branding/insipid-reel.mp4",
-  "\"Almost Love\"": "/branding/almostlove.mp4",
-  "Dancing with the Stars China": "/branding/dwts-china.mp4",
-  "Heartbeats": "/branding/heartbeats.mp4",
-  "Gaga: Five Foot Two": "/branding/gaga-five.mp4",
-  "Star Search": "/branding/starsearch.mp4",
-  "Grace": "/branding/grace.mp4",
-  "LDMA": "/branding/ldma.mp4",
-  "So You Think You Can Dance": "/branding/sytycd.mp4",
-  "96th Academy Awards": "/branding/oscars.mp4",
-  "\"Hurricane Venus\"": "/branding/boa.mp4",
-  "Coachella": "/branding/coachella.mp4",
+  "Super Bowl Halftime Show": cdnUrl("gaga-reel.mp4"),
+  "Ariana Grande": cdnUrl("ariana-reel.mp4"),
+  "Lady Gaga": cdnUrl("gaga-reel-2.mp4"),
+  "Taylor Swift": cdnUrl("taylor-reel.mp4"),
+  "J Balvin x Fortnite": cdnUrl("jbalvin-reel.mp4"),
+  "Valley Girl": cdnUrl("valleygirl-reel.mp4"),
+  "Artistic Dance Exchange": cdnUrl("ade-reel.mp4"),
+  "The PULSE": cdnUrl("pulse-reel.mp4"),
+  "Fama A Bailar": cdnUrl("fama-reel.mp4"),
+  "\"Insipid\"": cdnUrl("insipid-reel.mp4"),
+  "\"Almost Love\"": cdnUrl("almostlove.mp4"),
+  "Dancing with the Stars China": cdnUrl("dwts-china.mp4"),
+  "Heartbeats": cdnUrl("heartbeats.mp4"),
+  "Gaga: Five Foot Two": cdnUrl("gaga-five.mp4"),
+  "Star Search": cdnUrl("starsearch.mp4"),
+  "Grace": cdnUrl("grace.mp4"),
+  "LDMA": cdnUrl("ldma.mp4"),
+  "So You Think You Can Dance": cdnUrl("sytycd.mp4"),
+  "96th Academy Awards": cdnUrl("oscars.mp4"),
+  "\"Hurricane Venus\"": cdnUrl("boa.mp4"),
+  "Coachella": cdnUrl("coachella.mp4"),
 };
 
 export const CreditsWall = () => {

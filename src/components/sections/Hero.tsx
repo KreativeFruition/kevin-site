@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { cinematicEase } from "@/lib/motion";
+import { cdnUrl } from "@/lib/cdn";
 
 const textMotion = {
   initial: { opacity: 0, y: 32 },
@@ -64,7 +65,7 @@ export const Hero = () => {
           preload="auto"
           aria-hidden="true"
         >
-          <source src="/branding/hero-reel.mp4" type="video/mp4" />
+          <source src={cdnUrl("hero-reel.mp4")} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/5 bg-gradient-to-b from-black/70 via-black/35 to-transparent" />
