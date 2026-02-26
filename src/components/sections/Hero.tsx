@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { cinematicEase } from "@/lib/motion";
 import { cdnUrl } from "@/lib/cdn";
@@ -13,7 +13,6 @@ const textMotion = {
 
 export const Hero = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [needsManualPlay, setNeedsManualPlay] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -21,33 +20,17 @@ export const Hero = () => {
       const attemptPlay = () => {
         video.currentTime = 0;
         video.muted = true;
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            setNeedsManualPlay(true);
-          });
-        }
+        video.play().catch(() => {
+          /* Ignore autoplay rejections – keep background static */
+        });
       };
-      video.addEventListener("loadeddata", attemptPlay, { once: true });
+      video.addEventListener("canplaythrough", attemptPlay, { once: true });
       attemptPlay();
       return () => {
-        video.removeEventListener("loadeddata", attemptPlay);
+        video.removeEventListener("canplaythrough", attemptPlay);
       };
     }
   }, []);
-
-  const handleManualPlay = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.currentTime = 0;
-    video.muted = true;
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => setNeedsManualPlay(false))
-        .catch(() => setNeedsManualPlay(true));
-    }
-  };
 
   return (
     <section
@@ -71,16 +54,6 @@ export const Hero = () => {
         <div className="absolute inset-x-0 top-0 h-1/5 bg-gradient-to-b from-black/70 via-black/35 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/60 to-black/90" />
         <div className="absolute inset-x-0 bottom-0 h-4/5 bg-gradient-to-t from-black via-black/70 to-transparent" />
-        {needsManualPlay && (
-          <button
-            onClick={handleManualPlay}
-            className="absolute inset-0 z-20 flex items-center justify-center bg-black/70 text-xs uppercase tracking-[0.5em] text-white"
-          >
-            <span className="rounded-full border border-white px-6 py-3">
-              Play Reel
-            </span>
-          </button>
-        )}
       </div>
       <motion.div
         className="relative z-10 space-y-6 text-white"

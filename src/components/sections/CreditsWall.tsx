@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import credits from "@/data/credits.json";
 import { motion } from "framer-motion";
 import { cinematicEase } from "@/lib/motion";
@@ -29,8 +30,25 @@ const creditHighlightVideos: Record<string, string> = {
   "\"Hurricane Venus\"": cdnUrl("boa.mp4"),
   "Coachella": cdnUrl("coachella.mp4"),
 };
+const creditVideoSources = Array.from(new Set(Object.values(creditHighlightVideos)));
 
 export const CreditsWall = () => {
+  useEffect(() => {
+    const links = creditVideoSources.map((src) => {
+      const link = document.createElement("link");
+      link.rel = "prefetch";
+      link.as = "video";
+      link.href = src;
+      link.crossOrigin = "anonymous";
+      document.head.appendChild(link);
+      return link;
+    });
+
+    return () => {
+      links.forEach((link) => link.remove());
+    };
+  }, []);
+
   return (
     <section
       id="work"

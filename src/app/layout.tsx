@@ -73,6 +73,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-black">
+      <head>
+        <link
+          rel="preconnect"
+          href="https://d1dnclb6k05rdk.cloudfront.net"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://d1dnclb6k05rdk.cloudfront.net" />
+      </head>
       <body className="bg-black text-white">
         {children}
       </body>
