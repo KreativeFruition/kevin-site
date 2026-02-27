@@ -2,8 +2,6 @@
 
 import { useEffect } from "react";
 import credits from "@/data/credits.json";
-import { motion } from "framer-motion";
-import { cinematicEase } from "@/lib/motion";
 import { cdnUrl } from "@/lib/cdn";
 
 type Credit = (typeof credits)[number];
@@ -80,22 +78,14 @@ export const CreditsWall = () => {
         </div>
         <div className="grid grid-cols-1 gap-6 text-white sm:grid-cols-2 lg:grid-cols-3 auto-rows-[minmax(0,1fr)]">
           {credits.map((credit: Credit, index) => (
-            <motion.article
+            <article
               key={`${credit.name}-${index}`}
               className="group relative flex h-full flex-col overflow-hidden border border-transparent bg-neutral-950/30 transition hover:border-neutral-700"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.03,
-                ease: cinematicEase,
-              }}
             >
               {creditHighlightVideos[credit.name] && (
                 <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
                   <video
-                    className="hidden sm:block absolute inset-0 h-full w-full scale-95 object-cover opacity-0 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100 sm:scale-100"
+                    className="absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100 sm:scale-100 scale-95"
                     autoPlay
                     loop
                     muted
@@ -136,7 +126,7 @@ export const CreditsWall = () => {
                   </div>
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>
