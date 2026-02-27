@@ -93,9 +93,9 @@ export const CreditsWall = () => {
               }}
             >
               {creditHighlightVideos[credit.name] && (
-                <div className="pointer-events-none absolute inset-0 z-0">
+                <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
                   <video
-                    className="h-full w-full object-cover opacity-100 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100"
+                    className="absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100"
                     autoPlay
                     loop
                     muted
@@ -109,7 +109,7 @@ export const CreditsWall = () => {
                 </div>
               )}
               <div className="relative z-10 flex h-full flex-col p-6 pb-16">
-                <p className="text-xs uppercase tracking-[0.5em] text-white/70 transition-colors sm:text-neutral-500 sm:group-hover:text-white/70">
+                <p className="text-xs uppercase tracking-[0.5em] text-white/90 transition-colors sm:text-neutral-500 sm:group-hover:text-white/70">
                   {credit.category}
                 </p>
                 <h3 className="font-display text-4xl leading-tight tracking-tight text-white transition-colors group-hover:text-white sm:text-6xl">
