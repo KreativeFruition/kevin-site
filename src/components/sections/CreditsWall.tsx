@@ -95,7 +95,7 @@ export const CreditsWall = () => {
               {creditHighlightVideos[credit.name] && (
                 <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
                   <video
-                    className="absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100 sm:scale-100 scale-95"
+                    className="hidden sm:block absolute inset-0 h-full w-full scale-95 object-cover opacity-0 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100 sm:scale-100"
                     autoPlay
                     loop
                     muted
