@@ -9,7 +9,12 @@ const textMotion = {
   transition: { duration: 0.9, ease: cinematicEase },
 };
 
-const HERO_VIDEO_ID = process.env.NEXT_PUBLIC_HERO_VIDEO_ID ?? "sgQ2zorivsM";
+const HERO_VIDEO_WEBM =
+  process.env.NEXT_PUBLIC_HERO_VIDEO_WEBM ??
+  "https://kevin-branding-media.s3.us-east-2.amazonaws.com/branding/hero-reel.webm";
+const HERO_VIDEO_MP4 =
+  process.env.NEXT_PUBLIC_HERO_VIDEO_MP4 ??
+  "https://kevin-branding-media.s3.us-east-2.amazonaws.com/branding/hero-reel.mp4";
 
 export const Hero = () => {
   return (
@@ -18,18 +23,28 @@ export const Hero = () => {
       className="relative flex min-h-dvh flex-col justify-end gap-10 overflow-hidden bg-black pb-16 pt-32"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <iframe
-          title="Kevin Frey Hero Reel"
-          className="pointer-events-none absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 md:scale-100 scale-[1.15]"
-          style={{ aspectRatio: "16 / 9" }}
-          src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=1&loop=1&mute=1&controls=0&playlist=${HERO_VIDEO_ID}&playsinline=1&modestbranding=1&rel=0`}
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowFullScreen={false}
-        />
-        <div className="absolute -inset-x-12 -inset-y-8 md:inset-0 bg-gradient-to-b from-black/35 via-black/10 to-transparent" />
-        <div className="absolute -inset-x-12 top-0 h-1/5 md:inset-x-0 bg-gradient-to-b from-black/70 via-black/35 to-transparent" />
-        <div className="absolute -inset-x-12 -inset-y-8 md:inset-0 bg-gradient-to-t from-transparent via-black/60 to-black/90" />
-        <div className="absolute -inset-x-12 bottom-[-32px] h-[110%] md:inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+        <video
+          className="pointer-events-none absolute left-1/2 top-1/2 min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 object-cover md:scale-100 scale-[1.15]"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster="/branding/hero-reel-poster.jpg"
+        >
+          {HERO_VIDEO_WEBM && (
+            <source
+              src={HERO_VIDEO_WEBM}
+              type="video/webm; codecs=vp9"
+            />
+          )}
+          {HERO_VIDEO_MP4 && (
+            <source
+              src={HERO_VIDEO_MP4}
+              type="video/mp4"
+            />
+          )}
+        </video>
       </div>
       <div className="relative z-10 px-6 sm:px-10 lg:px-16 pb-8">
         <motion.div
