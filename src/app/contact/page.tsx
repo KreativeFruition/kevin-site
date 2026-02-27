@@ -6,13 +6,19 @@ export const metadata: Metadata = {
   description: "Call, text, email, or follow Kevin Frey via this mobile-first contact hub.",
 };
 
+type ContactLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
 const links = [
   { label: "CALL", href: "tel:+19095886577" },
   { label: "TEXT", href: "sms:+19095886577" },
   { label: "EMAIL", href: "mailto:kf_inquiry@icloud.com" },
   { label: "WEBSITE", href: "https://www.kevinfrey.info", external: true },
   { label: "INSTAGRAM", href: "https://instagram.com/kevin.fr3y", external: true },
-] as const;
+] satisfies ReadonlyArray<ContactLink>;
 
 export default function ContactPage() {
   return (
