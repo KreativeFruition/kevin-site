@@ -44,9 +44,6 @@ export const SiteHeader = () => {
             className="h-10 w-10"
             loading="lazy"
           />
-          <span className="hidden border-l border-neutral-800 pl-4 text-xs uppercase tracking-[0.5em] text-neutral-400 md:block">
-            Director · Creative · Producer · Educator · Choreographer · Dancer
-          </span>
         </button>
         <div className="hidden items-center gap-6 md:flex">
           <nav className="flex gap-6 text-sm uppercase tracking-[0.4em] text-neutral-200">
