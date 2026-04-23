@@ -1,4 +1,8 @@
 import type { NextConfig } from "next";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const rewrites = async () => [
   { source: "/favicon.ico", destination: "/icons/favicon.ico" },
@@ -9,6 +13,9 @@ const rewrites = async () => [
 
 const nextConfig: NextConfig = {
   rewrites,
+  turbopack: {
+    root: projectRoot,
+  },
 };
 
 export default nextConfig;

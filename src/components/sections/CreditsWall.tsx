@@ -21,6 +21,7 @@ const creditHighlightVideos: Record<string, string> = {
   "Heartbeats": cdnUrl("heartbeats.mp4"),
   "Gaga: Five Foot Two": cdnUrl("gaga-five.mp4"),
   "Star Search": cdnUrl("starsearch.mp4"),
+  "Adidas x FIFA": cdnUrl("adidas.mp4"),
   "Grace": cdnUrl("grace.mp4"),
   "LDMA": cdnUrl("ldma.mp4"),
   "So You Think You Can Dance": cdnUrl("sytycd.mp4"),
